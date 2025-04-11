@@ -53,6 +53,16 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
 SITE_ID = 1
 
 MIDDLEWARE = [

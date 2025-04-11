@@ -9,6 +9,16 @@ urlpatterns = [
     # path('lstcrt/', BookListCreate.as_view()),
     # path('dstdltupt/<int:pk>/', BookRetrieveDestroy.as_view()),
 ]
+from django.urls import path
+from .views import RegisterView, ProfileView, ProfileUpdateView, ProfileDeleteView, LogoutView
+
+urlpatterns = [
+    path('register/', RegisterView.as_view(), name='register'),
+    path('profile/', ProfileView.as_view(), name='profile'),
+    path('profile/update/', ProfileUpdateView.as_view(), name='profile_update'),
+    path('profile/delete/', ProfileDeleteView.as_view(), name='profile_delete'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+]
 
 
 
